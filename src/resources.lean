@@ -1,4 +1,5 @@
 import data.real.basic
+import tactic
 
 
 private meta def finish_proof_about_abs : tactic unit := `[
