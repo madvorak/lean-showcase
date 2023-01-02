@@ -16,8 +16,8 @@ def seq_limit (s : ℕ → ℝ) (a : ℝ) : Prop :=
 
 
 -- Součet limit:
--- Pokud [`u` converguje k `a`] a [`v` converguje k `b`],
--- pak [`u + v` converguje k `a + b`].
+-- Pokud [`u` konverguje k `a`] a [`v` konverguje k `b`],
+-- pak [`u + v` konverguje k `a + b`].
 example (u v : ℕ → ℝ) (a b : ℝ) (hu : seq_limit u a) (hv : seq_limit v b) :
   seq_limit (u + v) (a + b) :=
 begin
@@ -25,8 +25,8 @@ begin
 end
 
 -- Věta o dvou policajtech:
--- Pokud [posloupnost `u` converguje k `z`] a stejně tak [posloupnost `v` converguje k `z`],
--- pak [posloupnost `w` taková že `u ≤ w ≤ v` converguje k `z` taktéž].
+-- Pokud [posloupnost `u` konverguje k `z`] a stejně tak [posloupnost `v` konverguje k `z`],
+-- pak [posloupnost `w` taková že `u ≤ w ≤ v` konverguje k `z` taktéž].
 example (u v w : ℕ → ℝ) (z : ℝ) (hu : seq_limit u z) (hv : seq_limit v z)
         (below : ∀ n, u n ≤ w n) (above : ∀ n, w n ≤ v n) :
   seq_limit w z :=
